@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Form</class>
+ <widget class="QWidget" name="Form">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>451</width>
+    <height>301</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>ELIMINAR NODOS  / ETIQUETAS </string>
+  </property>
+  <widget class="QPushButton" name="btneliminar">
+   <property name="geometry">
+    <rect>
+     <x>110</x>
+     <y>240</y>
+     <width>98</width>
+     <height>27</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Eliminar</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btncancelar">
+   <property name="geometry">
+    <rect>
+     <x>230</x>
+     <y>240</y>
+     <width>98</width>
+     <height>27</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Aceptar/Salir</string>
+   </property>
+  </widget>
+  <widget class="QTreeView" name="treeView">
+   <property name="geometry">
+    <rect>
+     <x>40</x>
+     <y>60</y>
+     <width>371</width>
+     <height>161</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>40</x>
+     <y>30</y>
+     <width>351</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>12</pointsize>
+     <weight>50</weight>
+     <italic>true</italic>
+     <bold>false</bold>
+     <underline>false</underline>
+     <strikeout>false</strikeout>
+    </font>
+   </property>
+   <property name="text">
+    <string>Seleccione la etiqueta  o nodo a borrar:</string>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>btneliminar</sender>
+   <signal>clicked()</signal>
+   <receiver>Form</receiver>
+   <slot>Eliminar()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>177</x>
+     <y>273</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>258</x>
+     <y>284</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>btncancelar</sender>
+   <signal>clicked()</signal>
+   <receiver>Form</receiver>
+   <slot>Cerrar()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>357</x>
+     <y>262</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>462</x>
+     <y>263</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>Eliminar()</slot>
+  <slot>Cerrar()</slot>
+  <slot>Actualizar()</slot>
+ </slots>
+</ui>
