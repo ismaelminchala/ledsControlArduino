@@ -24,6 +24,7 @@ typedef struct{                     // Struct definition for
 bool turnOffLeds(sequenceControl *controller);
 bool ledSequence(sequenceControl *controller);
 bool sequenceSpeed(int t_base, int t_delay);
+bool toogleState();
 /***************************************************************/
 
 /*********************** + Setup loop + ************************/
@@ -44,11 +45,18 @@ void loop() {
   int16_t slow = 750;
   int16_t t_delay = fast;
   sequenceControl ledsControl = {leds, len, ascending};
-  
+/*  
   if ( !digitalRead(KEY1) == LOW ){
     ledsControl.orientation = ascending;
   } else{
     ledsControl.orientation = descending;
+  }*/
+  if ( !digitalRead(KEY1) == LOW ){
+    if(toogleState()){
+      ledsControl.orientation = ascending;;
+    } else{
+      ledsControl.orientation = descending;
+    }
   }
 
   if ( !digitalRead(KEY2) == LOW ){
@@ -103,4 +111,11 @@ bool sequenceSpeed(int t_base, int t_delay){
     cont = 0;
     return true;
   }
+}
+
+bool toogleState(){
+  static bool var = false;
+  delay(100);
+  var = !var;
+  return var;
 }
